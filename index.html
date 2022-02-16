@@ -1,8 +1,134 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="style.css">
     <body>
-        <h1>My First Heading</h1>
-        <p>My first paragraph.</p>
+        <section class="vue">
+            <form>
+                <input id="btn" type="button" value="off">
+            </form>
+            <div class="synth">
+                <div class="osc-content">
+                    <div><h1>Oscillator</h1></div>
+                    <div class="osc-items">
+                        <div class="oscillator toggle">
+                            <div class="checkbox-wave">
+                                <div><h4>Sin | Tri </h4></div>
+                                <div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="potentionmeter">
+                                <input type="range" min="1" max="100" class="range"     value="100" orient="vertical"id="osc" oninput="rangevalue.value=value"/>
+                                <output class="osc" id="rangevalue"></output>
+                            </div>
+                        </div>
+                        <div class="oscillator toggle">
+                            <div class="checkbox-wave">
+                                <div><h4>Sin | Sqr</h4></div>
+                                <div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="potentionmeter">
+                                <input type="range" min="1" max="100" class="range" orient="vertical"value="100" id="osc2" oninput="rangevalue4.value=value"/>
+                                <output class="osc" id="rangevalue4"></output>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modulation">
+                <div class="osc-content">
+                    <div><h1>Modulation</h1></div>
+                    <div class="osc-items">
+                        <div class="oscillator toggle">
+                            <div class="checkbox-wave">
+                                <div><h4>Sin | Sqr </h4></div>
+                                <div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="gain lfo">
+                                <input type="range" min="1" max="100" class="range" value="100" id="lfo" orient="vertical"
+                                oninput="rangevalue2.value=value"/>
+                                <output class="lfo" id="rangevalue2"></output>
+                            </div>
+                        </div>
+                        <div class="oscillator without-toggle">
+                            <div class="checkbox-wave">
+                                <div><h4>Dry/Wet </h4></div>
+                                <div class="gain rangemod">
+                                    <input type="range" min="1" max="1000" class="range" value="100" id="mod" orient="vertical"
+                                    oninput="rangevalue3.value=value"/>
+                                    <output class="mod" id="rangevalue3"></output>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modulation">
+                <div class="osc-content">
+                    <div><h1>HP/BP Filter</h1></div>
+                    <div class="osc-items">
+                        <div class="oscillator toggle">
+                            <div class="checkbox-wave">
+                                <div><h4>Freq / HZ </h4></div>
+                                <div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="frequency filter">
+                                <input type="range" min="1" max="100" class="range" value="100" id="filter" orient="vertical"
+                                oninput="rangevalue5.value=value"/>
+                                <output class="filter" id="rangevalue5"></output>
+                            </div>
+                        </div>
+                        <div class="oscillator without-toggle">
+                            <div class="checkbox-wave">
+                                <div><h4>Dry/Wet </h4></div>
+                                <div class="gain filter">
+                                    <input type="range" min="0" max="1000" class="range" value="0" id="gfilter" orient="vertical"
+                                    oninput="rangevalue6.value=value"/>
+                                    <output class="gfilter" id="rangevalue6"></output>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modulation">
+                <div class="osc-content">
+                    <div><h1>Distortion</h1></div>
+                    <div class="osc-items">
+                        <div class="oscillator without-toggle">
+                            <div class="checkbox-wave">
+                                <div><h4>Freq / HZ </h4></div>
+                            </div>
+                            <div class="frequency filter">
+                                <input type="range" min="0" max="100" class="range" value="0" id="disto" orient="vertical"
+                                oninput="rangevalue7.value=value"/>
+                                <output id="rangevalue7"></output>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="input.js"></script>  
     </body>
-    <script src="synth.js"></script>
 </html> 
